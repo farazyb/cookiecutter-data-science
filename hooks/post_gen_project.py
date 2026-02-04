@@ -30,6 +30,7 @@ packages_to_install += scaffold
 
 # {% if cookiecutter.pydata_packages == "basic" %}
 packages_to_install += basic
+packages_to_install += ["pre-commit", "nbstripout","nbautoexport"]
 # {% endif %}
 
 # {% if cookiecutter.linting_and_formatting == "ruff" %}

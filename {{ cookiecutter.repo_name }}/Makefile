@@ -179,3 +179,16 @@ export PRINT_HELP_PYSCRIPT
 
 help:
 	@$(PYTHON_INTERPRETER) -c "${PRINT_HELP_PYSCRIPT}" < $(MAKEFILE_LIST)
+
+#################################################################################
+# GIT TOOLS                                                                     #
+#################################################################################
+
+## Setup git + pre-commit + notebook tooling.
+## If tools are missing, installs them (via pip) using the current Python.
+.PHONY: git_tools
+git_tools:
+	$(PYTHON_INTERPRETER) scripts/git_tools.py
+.PHONY: export
+export:
+	$(PYTHON_INTERPRETER) -m nbautoexport export -f script notebooks
